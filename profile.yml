@@ -1,0 +1,30 @@
+my_dbt_project:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: vps.harkhoe.tech
+      port: 5432
+      user: dinesh
+      password: X6p4dKJRFaXY3eQE
+      dbname: dbt_learn
+      schema: dbt_core_dev_output  # This is the target schema where dbt will materialize models
+      threads: 4
+    uat:
+      type: postgres
+      host: vps.harkhoe.tech
+      port: 5432
+      user: dinesh
+      password: X6p4dKJRFaXY3eQE
+      dbname: dbt_learn_uat
+      schema: dbt_core_uat_output  # This is the target schema where dbt will materialize models
+      threads: 4
+    prod:
+      type: postgres
+      host: vps.harkhoe.tech
+      port: 5432
+      user: dinesh
+      password: X6p4dKJRFaXY3eQE
+      dbname: dbt_learn_prod
+      schema: dbt_core  # Target schema for production
+      threads: 8
