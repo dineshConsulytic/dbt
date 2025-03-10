@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: dbt_learn
+    schema: dinesh
+    tables:
+      - name: categories
+      - name: customers
+      - name: employee
+      - name: order_details
+      - name: orders
+      - name: products
+      - name: testproducts
+
+models:
+  - name: categories
+    description: "Table containing product categories."
+    columns:
+      - name: category_id
+        description: "The primary key for the categories table."
+        data_tests:
+          - unique
+          - not_null
+      - name: category_name
+        description: "The name of the category."
+        data_tests:
+          - not_null
+  - name: customers
+    description: "Table containing customer information."
+    columns:
+      - name: customer_id
+        description: "The primary key for the customers table."
+        tests:
+          - unique
+          - not_null
+      - name: customer_name
+        description: "The name of the customer."
+        tests:
+          - not_null
